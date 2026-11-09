@@ -1,0 +1,26 @@
+seed: 42
+model:
+  latent_dim: 128
+  token_dim: 64
+  num_latent_tokens: 12
+  num_layers: 6
+  num_heads: 4
+  mlp_ratio: 4.0
+  diffusion_steps: 500
+  beta_start: 0.0001
+  beta_end: 0.02
+  prediction_target: v
+  condition_hidden_dim: 256
+  dropout: 0.1
+  condition_dropout: 0.05
+  primary_condition_dropout: 0.10
+training:
+  batch_size: 24
+  learning_rate: 0.0002
+  epochs: 350
+  weight_decay: 0.0001
+  max_grad_norm: 5.0
+  ema_decay: 0.999
+  early_stopping_patience: 12
+  early_stopping_min_delta: 0.0001
+  early_stopping_min_epochs: 20

@@ -1,0 +1,13 @@
+Sample,Phenotype_Tokens,Body_Site_Coarse,Project_Group,Instrument,Variable_Region,Sequencing_Type,Library_Layout,raw_total_reads,split
+s01,Healthy,stool_feces,p1,Illumina,V4,amplicon,paired,10000,train
+s02,Healthy,stool_feces,p1,Illumina,V4,amplicon,paired,11000,train
+s03,Healthy,stool_feces,p2,Illumina,V3-V4,amplicon,paired,12000,train
+s04,Healthy,stool_feces,p2,Illumina,V3-V4,amplicon,paired,13000,train
+s05,Healthy,stool_feces,p1,Illumina,V4,amplicon,paired,9000,validation
+s06,Healthy,stool_feces,p2,Illumina,V3-V4,amplicon,paired,9500,test
+s07,IBD,stool_feces,p1,Illumina,V4,amplicon,paired,14000,train
+s08,IBD,stool_feces,p1,Illumina,V4,amplicon,paired,15000,train
+s09,IBD,stool_feces,p2,Illumina,V3-V4,amplicon,paired,16000,train
+s10,IBD,stool_feces,p2,Illumina,V3-V4,amplicon,paired,17000,train
+s11,IBD,stool_feces,p1,Illumina,V4,amplicon,paired,14500,validation
+s12,IBD,stool_feces,p2,Illumina,V3-V4,amplicon,paired,15500,test

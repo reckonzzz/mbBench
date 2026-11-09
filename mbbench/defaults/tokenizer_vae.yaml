@@ -1,0 +1,58 @@
+model_type: vae
+seed: 42
+model:
+  bio_latent_dim: 128
+  tech_latent_dim: 32
+  project_latent_dim: 16
+  encoder_hidden_dim: 1024
+  decoder_hidden_dim: 1024
+  condition_embedding_dim: 32
+  dropout: 0.1
+  mask_threshold: 0.40
+  clr_eps: 0.000001
+  logvar_min: -12.0
+  logvar_max: 12.0
+training:
+  nuisance_incomplete_reconstruction_weight: 0.5
+  batch_size: 32
+  learning_rate: 0.0005
+  epochs: 100
+  weight_decay: 0.0001
+  max_grad_norm: 5.0
+  early_stopping_patience: 8
+  early_stopping_min_delta: 0.002
+  early_stopping_min_epochs: 15
+  balanced_sampling:
+    enabled: true
+    seed: 42
+    body_site_exponent: 0.15
+    clip_range: [0.25, 4.0]
+  bio_batch_adversarial_sample_weighting:
+    enabled: true
+    min_projects: 2
+    min_samples_per_project: 5
+loss:
+  mask_weight: 1.0
+  recon_weight: 1.0
+  compositional_weight: 1.0
+  hierarchy_weight: 0.2
+  batch_supervision_weight: 0.25
+  bio_batch_adversarial_weight: 0.01
+  bio_supervision_weight: 0.06
+  orthogonality_weight: 0.003
+  project_shrinkage_weight: 0.0001
+  batch_supervision_start_epoch: 1
+  batch_supervision_ramp_epochs: 2
+  bio_supervision_start_epoch: 2
+  bio_supervision_ramp_epochs: 4
+  bio_batch_adversarial_start_epoch: 5
+  bio_batch_adversarial_ramp_epochs: 8
+  grl_start_epoch: 5
+  grl_ramp_epochs: 8
+  orthogonality_start_epoch: 2
+  orthogonality_ramp_epochs: 6
+  focal_gamma: 1.0
+  support_pos_weight_exponent: 0.25
+  support_pos_weight_cap: 8.0
+  kl_beta_max: 0.0015
+  kl_warmup_epochs: 18

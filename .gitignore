@@ -1,0 +1,38 @@
+# Local environments and credentials
+.venv/
+.env
+.env.*
+.pypirc
+.Renviron
+.Rhistory
+.RData
+.Rproj.user/
+
+# Build artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+*.Rcheck/
+*.whl
+*.tar.gz
+
+# Downloaded resources and run outputs
+runs/
+output/
+outputs/
+downloads/
+datasets/
+banks/
+models/
+pretrained_models/
+checkpoints/
+*.zip
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.parquet

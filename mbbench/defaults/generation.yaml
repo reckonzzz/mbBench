@@ -1,0 +1,10 @@
+model: ae
+phenotype: Healthy
+body_site: stool_feces
+n_samples: 100
+batch_size: 64
+output_mode: relative
+guidance_scale: 1.25
+support_temperature: 0.60
+seed: 42
+device: auto

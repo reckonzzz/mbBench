@@ -1,0 +1,16 @@
+schema_version: mbbench_benchmark_v1
+preset: batch-null-balanced
+description: No-batch safety benchmark with balanced Healthy, IBD, and IBS groups.
+model: {type: ae, directory: null, guidance_scale: 1.25, use_body_system: auto}
+conditions:
+  common: {Body_Site_Coarse: stool_feces}
+  groups:
+    - {label: Healthy, conditions: {Phenotype_Tokens: Healthy}}
+    - {label: IBD, conditions: {Phenotype_Tokens: IBD}}
+    - {label: IBS, conditions: {Phenotype_Tokens: IBS}}
+design: {n_samples: 240, n_batches: 4, mode: balanced, case_fractions: null, group_fractions: null, minimum_cell_count: 8}
+biology: {mode: natural, n_targets: null, target_taxa: null, prevalence_min: null, prevalence_max: null, effect_strength: null, effect_directions: null}
+batch: {mechanisms: []}
+support: {mode: temperature-bernoulli, threshold: 0.50, temperature: 0.60}
+observation: {model: dirichlet-multinomial, depth_mode: model-donor, depth_min: 1000, depth_max: 150000, concentration_mode: lognormal, concentration_median: 1000, concentration_log_sd: 0.45, concentration_min: 250, concentration_max: 4000, paired_neutral_counts: true}
+runtime: {seed: 42, batch_size: 64, device: auto}
